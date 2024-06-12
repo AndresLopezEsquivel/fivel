@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Here our Services</h1>
+  <p>You can consult them in the below list</p>
+</div>
+
+<div class="container category-row">
+    <h2><%= category = @services.category.sample %></h2>
+    <% category.each do |service|%>
+      <%= service.title %>
+    <% end %>
+</div>
