@@ -1,9 +1,9 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @services = Services.all
+    @services = Service.all
   end
 
   def show; end
