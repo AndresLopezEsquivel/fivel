@@ -1,0 +1,36 @@
+<div class="container">
+  <h1><%= @service.title %></h1>
+</div>
+<div class="container d-flex">
+  <div class="main-image">
+
+  </div>
+  <div class="other-images">
+
+  </div>
+</div>
+<div class="container description">
+  <h2><%= @service.description %></h2>
+</div>
+<div class="container">
+  <div class="ratings">
+
+  </div>
+  <div class="other-services">
+
+  </div>
+</div>
+
+
+<div class="container d-flex purchase-bar">
+  <div class="price">
+    <p><%= @service.price %></p>
+  </div>
+  <div class="buy-button">
+    <% if user_signed_in? %>
+      <button class="btn btn-primary">Buy</button>
+    <% else %>
+      <button class="btn btn-primary">Login</button>
+    <% end %>
+  </div>
+</div>
