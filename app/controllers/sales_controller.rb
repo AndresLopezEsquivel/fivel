@@ -9,10 +9,9 @@ class SalesController < ApplicationController
   end
 
   def create
-    @service = Service.find(params[:service_id]) # Buscar el servicio asociado
-    @sale = @service.sales.new(sale_params) # Crear nueva venta asociada al service
-    @sale.user = current_user  # asignar el buyer (current_user) a la venta
-    @service.user_id.current_user.email # who is the seller of the service
+    @service = Service.find(params[:service_id])
+    @sale = @service.sales.new(sale_params)
+    @sale.assign_buyer(current_user)
 
     if @sale.save
       redirect_to @sale, notice: 'Sale was succesfully created.'
@@ -34,7 +33,7 @@ class SalesController < ApplicationController
 
   def pendings
     @pending_purchases = Sale.where(status: 'pending', user: current_user)
-    @pending_orders = Sale.where(status: 'pending', service: { user: current_user }).includes(:service)
+    @pending_orders = Sale.where(status: 'pending', service_id: current_user.services.ids)
   end
 
   private
