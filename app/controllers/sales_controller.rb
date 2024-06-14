@@ -10,16 +10,8 @@ class SalesController < ApplicationController
 
   def create
     @service = Service.find(params[:service_id])
-    @sale = Sale.new(sale_params)
-    @sale.service_id = @service.id
-    @sale.user = current_user
-
-    if @sale.save
-      redirect_to @sale, notice: 'Product was succesfully bought.'
-    else
-      flash.now[:alert] = 'Error creating sale'
-      render :new, status: :unprocessable_entity
-    end
+    @sale = Sale.create!(status: "pending", date: Date.today, price: @service.price, user: current_user, service: @service )
+    redirect_to root_path, notice: 'Product was succesfully bought.'
   end
 
   def edit; end
@@ -34,6 +26,10 @@ class SalesController < ApplicationController
 
   def pendings
     @pending_purchases = Sale.where(status: 'pending')
+  end
+
+  def my_orders
+    @my_orders = current_user.sales
   end
 
   private
