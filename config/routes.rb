@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/user_services", to: "services#user_services"
   # get "/services/new", to: "services#new"
   # get "services:id/edit", to: "services#edit"
-  resources :services, only: %i[new create edit destroy show] do
+  resources :services, only: %i[new create edit update destroy show] do
     resources :sales, only: %i[create]
   end
 

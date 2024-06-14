@@ -14,6 +14,7 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
+    @service.user = current_user
     if @service.save
       redirect_to service_path(@service)
     else
@@ -24,7 +25,7 @@ class ServicesController < ApplicationController
   def edit; end
 
   def update
-    if @service.update
+    if @service.update(service_params)
       redirect_to service_path(@service)
     else
       render :edit, status: :unprocessable_entity
@@ -34,6 +35,10 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
     redirect_to services_path
+  end
+
+  def user_services
+    @user_services = Service.where(user: current_user)
   end
 
   private
