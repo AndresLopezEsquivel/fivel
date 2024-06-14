@@ -2,7 +2,6 @@ class Sale < ApplicationRecord
   belongs_to :user
   belongs_to :service
 
-  def assign_buyer(user)
-    self.user = user
-  end
+  validates :status, :date, :price, :user_id, :service_id, presence: true
+  validates :price, numericality: { only_integer: true }
 end
