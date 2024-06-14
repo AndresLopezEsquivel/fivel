@@ -11,7 +11,7 @@ class SalesController < ApplicationController
   def create
     @service = Service.find(params[:service_id])
     @sale = Sale.new(sale_params)
-    @sale.service = @service
+    @sale.service_id = @service.id
     @sale.user = current_user
 
     if @sale.save
