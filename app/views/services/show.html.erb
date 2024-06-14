@@ -22,15 +22,15 @@
 </div>
 
 
-<div class="container d-flex justify-content-between purchase-bar" style="position: sticky; bottom: 0">
+<div class="container d-flex justify-content-between purchase-bar" style="position: fixed; bottom: 0">
   <div class="price">
-    <p><%= @service.price %></p>
+    <p>Price: <%= @service.price %></p>
   </div>
   <div class="buy-button">
     <% if user_signed_in? %>
       <button class="btn btn-primary"><%= link_to "Buy" %></button>
     <% else %>
-      <button class="btn btn-primary" style="color: white"><%= link_to "Login", new_user_session_path %></button>
+      <button class="btn btn-primary" ><%= link_to "Login", new_user_session_path %></button>
     <% end %>
   </div>
 </div>
