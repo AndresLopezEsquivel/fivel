@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_08_231226) do
     t.string "title"
     t.text "description"
     t.float "price"
-    t.string "category"
+    t.string "category" 
     t.string "delivery_time"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
