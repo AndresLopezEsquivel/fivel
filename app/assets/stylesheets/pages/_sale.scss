@@ -1,0 +1,56 @@
+.sale-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .sale-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .sale-status {
+      padding: 5px 10px;
+      border-radius: 4px;
+      color: #fff;
+      background: #3d46a6;
+    }
+  }
+
+  .sale-info, .sale-user {
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
+
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+    .btn-back {
+      border: solid 1px $orange;
+      background-color: transparent;
+      color: white;
+      border-radius: 30px;
+      padding: 10px 20px;
+      transition: ease-in-out 0.3s;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
