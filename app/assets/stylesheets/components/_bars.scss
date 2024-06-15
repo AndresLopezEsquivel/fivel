@@ -1,0 +1,29 @@
+.purchase-bar {
+  width: 300px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  border: solid 1px $orange;
+  background-color: #150e1d;
+  border-radius: $border-radius-xl;
+  padding: 20px;
+
+  p {
+    margin: 20px auto;
+  }
+}
+
+.seller-bar {
+  background-color: #150e1d;
+  border: solid 1px $orange;
+  border-radius: $border-radius-xl;
+  padding: 20px;
+}
+
+.description-bar {
+  background-color: #150e1d;
+  border: solid 1px $orange;
+  border-radius: $border-radius-xl;
+  padding: 20px;
+}
