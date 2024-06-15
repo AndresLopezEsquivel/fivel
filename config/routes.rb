@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/profile", to: "users#profile"
   # get "/pending_orders", to: "sales#show_pending_orders"
   # get "/pending_sales", to: "sales#show_pending_sales"
+  get "myorders", to: "sales#my_orders"
   get "/pendings", to: "sales#pendings"
   patch "/sales/:id", to: "sales#update_status"
   # get "/services/:id", to: "services#show"
@@ -12,8 +13,8 @@ Rails.application.routes.draw do
   get "/user_services", to: "services#user_services"
   # get "/services/new", to: "services#new"
   # get "services:id/edit", to: "services#edit"
-  resources :services, only: %i[new create edit destroy show] do
-    resources :sales, only: %i[create]
+  resources :services, only: %i[new create edit update destroy show] do
+    resources :sales, only: %i[new create]
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,0 +1,20 @@
+<table class="table table-striped m-5 w-75 orders-table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Title</th>
+      <th scope="col">Status</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @my_orders.each_with_index do |order, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <td><%= order.service.title %></td>
+        <td><%= order.status %></td>
+        <td><button type="button" class="btn btn-info">Details</button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
