@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :services
   devise_for :users
-  root to: "services#index"
+  root to: "pages#home"
   get "/profile", to: "users#profile"
   # get "/pending_orders", to: "sales#show_pending_orders"
   # get "/pending_sales", to: "sales#show_pending_sales"
@@ -25,4 +25,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "/users/languages/new", to: "users#new_language", as: :new_language
+  post "/languages", to: "users#create_language"
 end

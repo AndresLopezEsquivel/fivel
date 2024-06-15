@@ -4,5 +4,6 @@
   <%= f.input :price %>
   <%= f.input :category %>
   <%= f.input :delivery_time %>
+  <%= f.input :images, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>
