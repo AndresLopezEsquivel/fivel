@@ -1,0 +1,15 @@
+.service-image{
+  border: solid 1px $orange;
+  border-radius: $border-radius-xl;
+
+
+}
+
+.service-image.main {
+  width: 500px;
+}
+
+.service-image.other {
+    width: 250px;
+    margin-left: 60px;
+  }

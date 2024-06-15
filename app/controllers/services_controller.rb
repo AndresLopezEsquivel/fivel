@@ -6,7 +6,9 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
-  def show; end
+  def show
+    @seller = @service.user
+  end
 
   def new
     @service = Service.new
@@ -48,6 +50,6 @@ class ServicesController < ApplicationController
   end
 
   def service_params
-    params.require(:service).permit(:title, :description, :price, :category, :delivery_time)
+    params.require(:service).permit(:title, :description, :price, :category, :delivery_time, images: [])
   end
 end

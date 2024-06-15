@@ -4,32 +4,37 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :first_name, required: false, autofocus: true %>
+    <%= f.input :last_name, required: false %>
+    <%= f.input :phone_number, required: false %>
+    <%= f.input :email, required: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "We need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+
+<h4 class="mt-5">Do you want to reset your password?</h4>
+    <%= f.input :new_password,
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :confirm_password,
+                required: false,
+                input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions btn btn-outline-primary">
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
 
+<br>
 <h3>Cancel my account</h3>
 
 <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+<br>
+<%= link_to "Back", :back, class: "btn btn-outline-primary"%>

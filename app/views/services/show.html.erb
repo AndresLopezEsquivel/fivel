@@ -1,36 +1,52 @@
-<div class="container mt-5">
-  <h1><%= @service.title %></h1>
-</div>
-<div class="container d-flex mt-5">
-  <div class="main-image">
-
-  </div>
-  <div class="other-images">
-
-  </div>
-</div>
-<div class="container description">
-  <h2><%= @service.description %></h2>
-</div>
 <div class="container">
-  <div class="ratings">
 
+<div class="container d-flex justify-content-between align-items-center mt-5 seller-bar">
+  <div>
+    <% if @seller.photo.attached? %>
+          <%= cl_image_tag @seller.photo.key %>
+    <% end %>
+    <%= @seller.first_name %> <%= @seller.last_name %>
   </div>
-  <div class="other-services">
+  <div>
+    <%= button_to "See profile", new_user_session_path, class: "btn-main" %>
+  </div>
+</div>
+  <div class="container mt-5">
+    <h1><%= @service.title %></h1>
+  </div>
+  <div class="container d-flex mt-5">
+    <div class="main-image">
+    <% if @service.images.attached? %>
+      <%= cl_image_tag @service.images.first.key, class: "service-image main" %>
+    </div>
+    <div class="container other-images">
+      <div class="row">
+      <% @service.images.drop(1).each do |image| %>
+      <div class="col other-image">
+        <%= cl_image_tag image.key, class: "service-image other" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+   <% end %>
+</div>
 
+<div class="container description mt-5">
+  <h2>Description</h2>
+  <div class="description-bar mt-5">
+  <p><%= @service.description %></p>
   </div>
 </div>
 
-
-<div class="container d-flex justify-content-between purchase-bar" style="position: fixed; bottom: 0">
+<div class="container d-flex justify-content-between align-items-center purchase-bar">
   <div class="price">
-    <p>Price: <%= @service.price %></p>
+    <p>Price: <%= @service.price %>€</p>
   </div>
   <div class="buy-button">
     <% if user_signed_in? %>
-      <%= button_to "Buy", service_sales_path(@service) %>
+      <%= button_to "Buy", service_sales_path(@service), class: "btn-main" %>
     <% else %>
-      <button class="btn btn-primary" ><%= link_to "Login", new_user_session_path %></button>
+      <%= link_to "Login", new_user_session_path, class: "btn-main" %>
     <% end %>
   </div>
 </div>

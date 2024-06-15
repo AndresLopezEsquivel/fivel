@@ -1,0 +1,13 @@
+.btn-main {
+  border: solid 1px $orange;
+  background-color: transparent;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: ease-in-out 0.3s;
+}
+
+.btn-main:hover {
+  background-color: $orange;
+  transform: scale(1.1);
+}

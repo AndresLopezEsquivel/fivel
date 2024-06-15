@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <h1>Unlock Your Project's Potential with Top Freelancers</h1>
+</div>
+<div class="container mt-5">
+  <h2>Here our Services</h2>
+  <p>You can consult them in the below list</p>
+</div>
+
+<div class="container category-row mt-5">
+<div class="row">
+    <% services = @services.where(category: @services.sample.category) %>
+    <h2><%= @services.sample.category %></h2>
+    <% services.each do |service|%>
+    <div class="col service-card">
+      <%= link_to service.title, service_path(service) %>
+    </div>
+    <% end %>
+</div>
+</div>

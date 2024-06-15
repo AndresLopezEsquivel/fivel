@@ -11,3 +11,8 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/sale";
+
+body {
+  background: linear-gradient(135deg, #150e1d, #000000);
+  color: white;
+}

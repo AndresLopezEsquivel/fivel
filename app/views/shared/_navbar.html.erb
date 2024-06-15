@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag("Fivel.png") %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,14 +10,22 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <li class="p-2 nav-item">Fivel Pro</li>
+        <li class="p-2 nav-item">Explore</li>
+        <li class="p-2 nav-item">Become a Seller</li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar mx-2", alt: "user-avatar" %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar mx-2", alt: "user-avatar" %>
+          <% else %>
+            <%= image_tag("avatar_default.jpg", class: "avatar mx-2") %>
+          <% end %>
+
           <a href="#" class="bars" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", "/profile", class: "dropdown-item" %>
               <%= link_to "My orders", myorders_path, class: "dropdown-item" %>
               <%= link_to "My listings", user_services_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
