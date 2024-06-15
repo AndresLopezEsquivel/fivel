@@ -11,7 +11,7 @@ class SalesController < ApplicationController
   def create
     @service = Service.find(params[:service_id])
     @sale = Sale.create!(status: "pending", date: Date.today, price: @service.price, user: current_user, service: @service )
-    redirect_to root_path, notice: 'Product was succesfully bought.'
+    redirect_to root_path, notice: 'Product was succesfully saved.'
   end
 
   def edit; end
