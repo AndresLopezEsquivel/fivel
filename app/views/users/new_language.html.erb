@@ -1,0 +1,5 @@
+<%= simple_form_for @user_language, url: "/languages" do |f| %>
+  <%= f.input :language %>
+  <%= f.input :level, collection: ["Beginner","Intermediate","Expert"] %>
+  <%= f.submit %>
+<% end %>
