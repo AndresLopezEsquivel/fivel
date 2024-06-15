@@ -133,7 +133,7 @@ services = Service.create!([
 
 
 Sale.create!(
-  status: 'in progress',
+  status: 'accepted',
   date: '2024-03-30',
   user_id: user4.id,
   price: Service.first.price,
@@ -149,7 +149,7 @@ Sale.create!(
 )
 
 Sale.create!(
-  status: 'in progress',
+  status: 'accepted',
   date: '2024-04-11',
   user_id: user5.id,
   price: Service.third.price,
