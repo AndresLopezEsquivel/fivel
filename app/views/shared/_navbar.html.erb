@@ -15,7 +15,11 @@
         <li class="p-2 nav-item">Become a Seller</li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large px-3", alt: "user-avatar" %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar mx-2", alt: "user-avatar" %>
+          <% else %>
+            <%= image_tag("avatar_default.jpg", class: "avatar mx-2") %>
+          <% end %>
           <a href="#" class="bars" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
           </a>
