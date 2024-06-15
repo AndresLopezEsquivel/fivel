@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_08_231226) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_15_173418) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +39,46 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_08_231226) do
     t.index ["user_id"], name: "index_services_on_user_id"
   end
 
+  create_table "user_certifications", force: :cascade do |t|
+    t.string "certification"
+    t.string "company"
+    t.date "year"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_certifications_on_user_id"
+  end
+
+  create_table "user_educations", force: :cascade do |t|
+    t.string "country"
+    t.string "college"
+    t.string "title"
+    t.string "major"
+    t.date "year"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_educations_on_user_id"
+  end
+
+  create_table "user_languages", force: :cascade do |t|
+    t.string "language"
+    t.string "level"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_languages_on_user_id"
+  end
+
+  create_table "user_skills", force: :cascade do |t|
+    t.string "skill"
+    t.string "level"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_skills_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -57,4 +97,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_08_231226) do
   add_foreign_key "sales", "services"
   add_foreign_key "sales", "users"
   add_foreign_key "services", "users"
+  add_foreign_key "user_certifications", "users"
+  add_foreign_key "user_educations", "users"
+  add_foreign_key "user_languages", "users"
+  add_foreign_key "user_skills", "users"
 end
