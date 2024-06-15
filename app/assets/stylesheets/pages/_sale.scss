@@ -2,7 +2,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background: #fff;
+  background: #2e2c2c;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -20,7 +20,7 @@
     .sale-status {
       padding: 5px 10px;
       border-radius: 4px;
-      color: #fff;
+      color: #fff8f8;
       background: #3d46a6;
     }
   }
@@ -44,13 +44,15 @@
     .btn-back {
       border: solid 1px $orange;
       background-color: transparent;
-      color: white;
+      color: rgb(227, 218, 218);
       border-radius: 30px;
       padding: 10px 20px;
       transition: ease-in-out 0.3s;
-    }
+      text-decoration: none;
 
-    &:hover {
-      opacity: 0.9;
+      &:hover {
+        opacity: 0.9;
+        background-color: rgba(177, 121, 16, 0.63);
+      }
     }
   }
