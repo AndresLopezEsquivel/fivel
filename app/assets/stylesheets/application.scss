@@ -15,3 +15,14 @@ body {
   background: linear-gradient(135deg, #150e1d, #000000);
   color: white;
 }
+
+hr {
+  color: $orange;
+  width: 90%;
+  margin: auto;
+}
+
+i {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
