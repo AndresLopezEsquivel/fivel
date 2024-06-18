@@ -1,51 +1,65 @@
 <div class="banner">
   <h1>Unlock Your Project's Potential with Top Freelancers</h1>
 </div>
+
+<div class="container categories mt-5">
+  <div class="row">
+    <% @services.pluck(:category).uniq.each do |category| %>
+      <div class="col-md-4 mb-4">
+        <div class="category-card">
+          <h3><%= category %></h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="container mt-5">
   <h2>Here our Services</h2>
   <p>You can consult them in the below list</p>
 </div>
 
-<div class="container category-row mt-5">
-  <div class="row">
+<div class="container mt-5">
+  <div class="row services">
     <% services = @services.where(category: @services.sample.category) %>
-    <h2><%= @services.sample.category %></h2>
+    <h2 class="category-title"><%= @services.sample.category %></h2>
     <% services.each do |service|%>
-      <div class="col service-card">
-        <%= link_to service.title, service_path(service) %>
+      <div class="col-md-4 service-card">
+        <div>
+          <div>
+            <%= link_to service.title, service_path(service), class: "service-title" %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
-  <div class="container category-row mt-5">
-    <div class="row">
+  <div class="container mt-5">
+    <div class="row services">
       <% services = @services.where(category: @services.sample.category) %>
-      <h2><%= @services.sample.category %></h2>
+      <h2 class="category-title"><%= @services.sample.category %></h2>
       <% services.each do |service|%>
-        <div class="col service-card">
-          <%= link_to service.title, service_path(service) %>
-        </div>
-      <% end %>
-    </div>
-    <div class="row">
-      <% services = @services.where(category: @services.sample.category) %>
-      <h2><%= @services.sample.category %></h2>
-      <% services.each do |service|%>
-        <div class="col service-card">
-          <%= link_to service.title, service_path(service) %>
-        </div>
-      <% end %>
-    </div>
-    <%= link_to "See More..", user_services_path, class: "text-muted" %>
-  </div>
-
-  <div class="container categories mt-5">
-    <div class="row">
-      <% @services.pluck(:category).uniq.each do |category| %>
-        <div class="col-md-4 mb-4">
-          <div class="category-card">
-            <h3><%= category %></h3>
+        <div class="col-md-4 service-card">
+          <div>
+            <div>
+              <%= link_to service.title, service_path(service), class: "service-title" %>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
+    <div class="row services">
+      <% services = @services.where(category: @services.sample.category) %>
+      <h2 class="category-title"><%= @services.sample.category %></h2>
+      <% services.each do |service|%>
+        <div class="col-md-4 service-card">
+          <div>
+            <div class="card-body">
+              <%= link_to service.title, service_path(service), class: "service-title" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to "See More..", user_services_path, class: "text-muted see-more-link" %>
   </div>
+</div>
