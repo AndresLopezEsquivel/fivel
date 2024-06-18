@@ -6,7 +6,7 @@
 
   <div class="sale-info">
     <h2>Service: <%= @sale.service.title %></h2>
-    <p>Seller: <%= @sale.service.user.first_name %> <%= @sale.service.user.last_name %></p>
+    <p><strong>Seller:</strong> <%= @sale.service.user.first_name %> <%= @sale.service.user.last_name %></p>
     <p><strong>Category:</strong> <%= @sale.service.category %></p>
     <p><strong>Description:</strong> <%= @sale.service.description %></p>
     <p><strong>Price:</strong> $<%= @sale.price %></p>
