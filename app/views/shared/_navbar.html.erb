@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag("Fivel.png") %>
+      <%= image_tag("logo_fivel.png") %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar mx-2", alt: "user-avatar" %>
           <% else %>
-            <%= image_tag("avatar_default.jpg", class: "avatar mx-2") %>
+            <%= image_tag("avatar_default.png", class: "avatar mx-2") %>
           <% end %>
 
           <a href="#" class="bars" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
