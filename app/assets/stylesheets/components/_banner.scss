@@ -14,7 +14,7 @@
 }
 
 .banner h1 {
-  font-family: "Instrument Serif", serif;
+  font-family: $headers-font;
   font-weight: 400;
   font-style: normal;
   margin: 35px;
@@ -31,7 +31,7 @@
 }
 
 .banner1 h1 {
-  font-family: "Instrument Serif", serif;
+  font-family: $headers-font;
   font-weight: 400;
   font-style: normal;
   margin: 0;
