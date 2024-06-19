@@ -1,0 +1,11 @@
+
+<div class="mt-5 p-5">
+  <%= simple_form_for @user_education, url: "/educations" do |f| %>
+  <%= f.input :country, as: :string %>
+  <%= f.input :college %>
+  <%= f.input :title %>
+  <%= f.input :major %>
+  <%= f.input :year %>
+  <%= f.submit %>
+<% end %>
+</div>

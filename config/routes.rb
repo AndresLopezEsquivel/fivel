@@ -27,7 +27,10 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/users/languages/new", to: "users#new_language", as: :new_language
   post "/languages", to: "users#create_language"
-
   get "/users/skills/new", to: "users#new_skill", as: :new_skill
   post "/skills", to: "users#create_skill"
+  get "/users/educations/new", to: "users#new_education", as: :new_education
+  post "/educations", to: "users#create_education"
+  get "/users/certifications/new", to: "users#new_certification", as: :new_certification
+  post "/certifications", to: "users#create_certification"
 end
