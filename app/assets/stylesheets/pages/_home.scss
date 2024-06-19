@@ -7,7 +7,7 @@
   background-color: #121320;
   padding: 20px;
   margin: 10px;
-  border: 1px solid rgb(178, 101, 34);
+  border: 1px solid $red-light-fivel;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@
   font-size: 20px;
 
   &:hover {
-    color: #ff8800;
+    color: white;
   }
 }
 
@@ -40,7 +40,7 @@
 }
 
 .see-more-link {
-  color: #ff8800;
+  color: $red-light-fivel;
   display: block;
   text-align: center;
   margin-top: 20px;
@@ -61,7 +61,7 @@
   background-color: #121320;
   padding: 20px;
   margin: 10px;
-  border: 1px solid rgb(178, 101, 34);
+  border: 1px solid $red-light-fivel;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

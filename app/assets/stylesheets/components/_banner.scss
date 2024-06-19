@@ -2,9 +2,11 @@
   background-image: image-url('background-gradient.jpeg');
   background-size: cover;
   background-position: center;
+
   padding: 150px 0;
   top: 0;
   width: 100%;
+  height: 80px;
   z-index: 1000;
 }
 .banner1 {
@@ -14,7 +16,7 @@
 }
 
 .banner h1 {
-  font-family: "Instrument Serif", serif;
+  font-family: $headers-font;
   font-weight: 400;
   font-style: normal;
   margin: 35px;
@@ -31,7 +33,7 @@
 }
 
 .banner1 h1 {
-  font-family: "Instrument Serif", serif;
+  font-family: $headers-font;
   font-weight: 400;
   font-style: normal;
   margin: 0;
