@@ -1,17 +1,17 @@
-.navbar-lewagon {
-  position: fixed;
+.navbar-fivel {
+  // position: fixed;
   top: 0;
   width: 100%;
   z-index: 1001;
   display: flex;
   justify-content: space-between;
   padding-left: 40px;
-  background: rgba(0, 0, 0, 0); /* Fondo semitransparente */
+  background: rgba(0, 0, 0, 0);
   padding: 1rem 2rem;
   backdrop-filter: blur(10px);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-fivel .navbar-collapse {
   flex-grow: 0;
 }
 

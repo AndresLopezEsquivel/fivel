@@ -1,0 +1,14 @@
+.category-card {
+  cursor: pointer;
+  width: 300px;
+  background-color: #150e1d;
+  border: solid 1px $orange;
+  border-radius: $border-radius-xl;
+  margin: auto 10px;
+  padding: 20px;
+  transition: ease-in-out 0.3s;
+}
+
+.category-card:hover {
+  transform: scale(1.1);
+}
