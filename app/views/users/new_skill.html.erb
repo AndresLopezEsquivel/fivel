@@ -1,7 +1,7 @@
 <div class="container mt-5 pt-5">
-  <h2>Add a new language</h2>
-  <%= simple_form_for @user_language, url: "/languages" do |f| %>
-    <%= f.input :language %>
+  <h2>Add a new skill</h2>
+  <%= simple_form_for @user_skill, url: "/skills" do |f| %>
+    <%= f.input :skill %>
     <%= f.input :level, collection: ["Beginner","Intermediate","Expert"] %>
     <%= f.submit %>
   <% end %>
