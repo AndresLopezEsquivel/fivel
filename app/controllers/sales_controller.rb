@@ -24,10 +24,6 @@ class SalesController < ApplicationController
     end
   end
 
-  def pendings
-    @pending_purchases = Sale.where(status: 'pending')
-  end
-
   def my_orders
     @my_orders = current_user.sales
   end

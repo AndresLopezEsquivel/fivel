@@ -1,0 +1,16 @@
+<div class="sale-details my-5">
+  <div class="sale-header">
+    <h1>Sale Details</h1>
+    <p class="sale-status"><%= @sale.status %></p>
+  </div>
+
+  <div class="sale-info">
+    <h2>Service: <%= @sale.service.title %></h2>
+    <p><strong>Seller:</strong> <%= @sale.service.user.first_name %> <%= @sale.service.user.last_name %></p>
+    <p><strong>Category:</strong> <%= @sale.service.category %></p>
+    <p><strong>Description:</strong> <%= @sale.service.description %></p>
+    <p><strong>Price:</strong> $<%= @sale.price %></p>
+    <p><strong>Delivery Date:</strong> <%= @sale.date %></p>
+  </div>
+  <%= link_to 'Back to Orders', myorders_path, class: "btn-main" %>
+</div>

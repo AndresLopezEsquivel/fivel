@@ -1,13 +1,20 @@
-.navbar-lewagon {
+.navbar-fivel {
+  // position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  display: flex;
   justify-content: space-between;
-  background: white;
   padding-left: 40px;
+  background: rgba(0, 0, 0, 0);
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-fivel .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-brand img {
-  width: 100px;
+  width: 90px;
 }

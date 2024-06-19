@@ -1,19 +1,48 @@
 .banner {
+  background-image: image-url('background-gradient.jpeg');
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
-  height: 500px;
+
+  padding: 150px 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.banner1 {
+  background-size: cover;
+  background-position: center;
+  padding: 170px 0;
 }
 
 .banner h1 {
-  padding: 50px;
+  font-family: $headers-font;
+  font-weight: 400;
+  font-style: normal;
+  margin: 35px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 72px;
-  font-weight: bold;
+  font-size: 40px;
+>>>>>>> main
 }
 
 .banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner1 h1 {
+  font-family: $headers-font;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+}
+
+.banner1 p {
   font-size: 20px;
   color: white;
   opacity: .7;
