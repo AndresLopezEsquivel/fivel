@@ -1,19 +1,17 @@
 <div class="banner">
   <h1 class="text-center">Unlock Your Project's Potential with Top Freelancers</h1>
   <div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: services_path, method: :get, class: "search-bar d-flex" do %>
-      <%= text_field_tag :search,
-            params[:search],
-            class: "form-control search-bar",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn-search btn-alternative" %>
-    <% end %>
+    <div class="col-4 my-1">
+      <%= form_with url: services_path, method: :get, class: "search-bar d-flex" do %>
+        <%= text_field_tag :search,
+              params[:search],
+              class: "form-control search-bar",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn-search btn-alternative" %>
+      <% end %>
+    </div>
   </div>
-</div>
-
-<hr>
 
 <div class="container categories d-flex mt-5">
     <div class="category-card">
