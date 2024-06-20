@@ -10,36 +10,62 @@
         %>
       <%= submit_tag "Search", name: "", class: "btn-search btn-alternative" %>
     <% end %>
+    </div>
   </div>
-</div>
 
-<hr>
 
-<div class="container categories d-flex mt-5">
-    <div class="category-card">
-      <i class="fa-solid fa-file-lines"></i>
-      <p>content-writing</p>
+
+  <div class="container categories my-5">
+  <div class="row">
+    <div class="col">
+      <a href="/services?search=content-writing">
+          <div class="category-card">
+            <i class="fa-solid fa-file-lines"></i>
+            <p>content-writing</p>
+          </div>
+        </a>
+      </div>
+    <div class="col">
+      <a href="/services?search=front-end">
+        <div class="category-card">
+          <i class="fa-solid fa-code"></i>
+          <p>front-end</p>
+        </div>
+      </a>
     </div>
-    <div class="category-card">
-      <i class="fa-solid fa-code"></i>
-      <p>front-end</p>
+    <div class="col">
+      <a href="/services?search=web-design">
+        <div class="category-card">
+          <i class="fa-solid fa-palette"></i>
+          <p>web-design</p>
+        </div>
+      </a>
     </div>
-    <div class="category-card">
-      <i class="fa-solid fa-palette"></i>
-      <p>web-design</p>
+    <div class="col">
+      <a href="/services?search=setup">
+        <div class="category-card">
+          <i class="fa-solid fa-gear"></i>
+          <p>setup</p>
+        </div>
+      </a>
+     </div>
+     <div class="col">
+      <a href="/services?search=debugging">
+        <div class="category-card">
+          <i class="fa-solid fa-bug"></i>
+          <p>debugging</p>
+        </div>
+      </a>
+     </div>
+    <div class="col">
+     <a href="/services?search=video-making">
+        <div class="category-card">
+          <i class="fa-brands fa-youtube"></i>
+          <p>video-making</p>
+        </div>
+      </a>
     </div>
-    <div class="category-card">
-      <i class="fa-solid fa-gear"></i>
-      <p>setup</p>
-    </div>
-    <div class="category-card">
-      <i class="fa-solid fa-bug"></i>
-      <p>debugging</p>
-    </div>
-    <div class="category-card">
-      <i class="fa-brands fa-youtube"></i>
-      <p>video-making</p>
-    </div>
+  </div>
 </div>
 
 <div class="container mt-5">
@@ -90,4 +116,3 @@
     </div>
     <%= link_to "See More..", user_services_path, class: "text-muted see-more-link" %>
   </div>
-</div>
