@@ -17,22 +17,49 @@
   </ul>
   <div class="tab-content pt-3" id="myTabContent">
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-      <h4>Languages</h4>
+      <div class="d-flex justify-content-between">
+        <h4>Languages</h4>
+        <%= link_to '', new_language_path, class: 'mx-1 fa-solid fa-square-plus' %>
+      </div>
       <div class="row gx-5 mb-3">
         <% @user_languages.each do |language| %>
           <div class="col-auto">
             <span><%= language.language %></span>
             <span class="fst-italic fw-light text-white">- <%= language.level %></span>
+            <%= link_to '', edit_language_path(language), class: 'mx-1 fa-solid fa-pen-to-square' %>
+            <%= link_to '', destroy_language_path(language), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>
       <hr>
       <h4 class="pt-3">Skills</h4>
-      <div class="row gx-5">
+      <div class="row gx-5 mb-3">
         <% @user_skills.each do |skill| %>
           <div class="col-auto">
             <span class="mb-0"><%= skill.skill %></span>
             <span class="mb-0 fst-italic fw-light text-white">- <%= skill.level %></span>
+          </div>
+        <% end %>
+      </div>
+      <hr>
+      <h4 class="pt-3">Education</h4>
+      <div class="row gx-5 mb-3">
+        <% @user_educations.each do |education| %>
+          <div class="col-auto">
+            <span class="mb-0"><%= education.major %></span>
+            <span class="mb-0 fst-italic fw-light text-white">- <%= education.college %></span>
+            <span class="mb-0 fst-italic fw-light text-white">, <%= education.year %></span>
+          </div>
+        <% end %>
+      </div>
+      <hr>
+      <h4 class="pt-3">Certifications</h4>
+      <div class="row gx-5 mb-5">
+        <% @user_certifications.each do |certification| %>
+          <div class="col-auto">
+            <span class="mb-0"><%= certification.certification %></span>
+            <span class="mb-0 fst-italic fw-light text-white">- <%= certification.company %></span>
+            <span class="mb-0 fst-italic fw-light text-white">, <%= certification.year %></span>
           </div>
         <% end %>
       </div>
