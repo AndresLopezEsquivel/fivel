@@ -18,19 +18,24 @@
   <div class="tab-content pt-3" id="myTabContent">
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
       <h4>Languages</h4>
-      <% @user_languages.each do |language| %>
-        <div class="d-flex">
-          <p><%= language.language %></p>
-          <p class="fst-italic fw-light text-white"> - <%= language.level %></p>
-        </div>
-      <% end %>
+      <div class="row gx-5 mb-3">
+        <% @user_languages.each do |language| %>
+          <div class="col-auto">
+            <span><%= language.language %></span>
+            <span class="fst-italic fw-light text-white">- <%= language.level %></span>
+          </div>
+        <% end %>
+      </div>
+      <hr>
       <h4 class="pt-3">Skills</h4>
-      <% @user_skills.each do |skill| %>
-        <div class="d-flex">
-          <p><%= skill.skill %></p>
-          <p class="fst-italic fw-light text-white"> - <%= skill.level %></p>
-        </div>
-      <% end %>
+      <div class="row gx-5">
+        <% @user_skills.each do |skill| %>
+          <div class="col-auto">
+            <span class="mb-0"><%= skill.skill %></span>
+            <span class="mb-0 fst-italic fw-light text-white">- <%= skill.level %></span>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">Hola</div>
     <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
