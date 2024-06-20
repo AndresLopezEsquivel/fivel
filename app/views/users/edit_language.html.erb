@@ -1,0 +1,8 @@
+<div class="container mt-5 pt-5">
+  <h2>Edit language</h2>
+  <%= simple_form_for @user_language, url: update_language_path(language_id: @user_language.id), method: :patch do |f| %>
+    <%= f.input :language %>
+    <%= f.input :level, collection: ["Beginner", "Intermediate", "Expert"] %>
+    <%= f.submit %>
+  <% end %>
+</div>
