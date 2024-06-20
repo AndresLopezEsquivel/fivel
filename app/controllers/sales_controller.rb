@@ -10,22 +10,26 @@ class SalesController < ApplicationController
 
   def create
     @service = Service.find(params[:service_id])
-    @sale = Sale.create!(status: "pending", date: Date.today, price: @service.price, user: current_user, service: @service )
-    redirect_to root_path, notice: 'Product was succesfully saved.'
+    @sale = Sale.create!(status: "pending", date: Date.today, price: @service.price, user: current_user, service: @service)
+    redirect_to root_path, notice: 'Product was successfully saved.'
   end
 
   def edit; end
 
   def update_status
     if @sale.update(status: params[:status])
-      redirect_to pendings_path, notice: 'Sale was successfully updated'
+      redirect_to show_pending_sales_path, notice: 'Status was successfully updated.'
     else
-      render :edit, status: :unprocessable_entity
+      redirect_to show_pending_sales_path, alert: 'Failed to update status.'
     end
   end
 
   def my_orders
     @my_orders = current_user.sales
+  end
+
+  def show_pending_sales
+    @pending_sales = current_user.sales.where(status: 'pending')
   end
 
   private

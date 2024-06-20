@@ -1,5 +1,5 @@
 <div class="banner">
-  <h1 class="text-center">Unlock Your Project's Potential with Top Freelancers</h1>
+  <h1 class="text-center">Unlock Your Projects Potential with Top Freelancers</h1>
   <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
     <%= form_with url: services_path, method: :get, class: "search-bar d-flex" do %>
@@ -43,21 +43,20 @@
 </div>
 
 <div class="container mt-5">
-<h1>Some of our services</h1>
+  <h1>Some of our services</h1>
   <div class="row">
-      <% @services.each do |service| %>
-        <div class="col-3 m-2 d-flex">
-          <div class="card card-styling h-100" style="width: 18rem;">
-            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title"><%= service.title %></h5>
-              <p class="card-text flex-grow-1"><%= service.description %></p>
-              <%= link_to "Details", service_path(service), class: "btn-main mt-auto" %>
-            </div>
+    <% @services.each do |service| %>
+      <div class="col-3 m-2 d-flex">
+        <div class="card card-styling h-100" style="width: 18rem;">
+          <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= service.title %></h5>
+            <p class="card-text flex-grow-1" style="font-size: 0.9rem;"><%= service.description %></p>
+            <%= link_to "Details", service_path(service), class: "btn-main mt-auto" %>
           </div>
         </div>
-      <% end %>
-  </div>
-    <%= link_to "See More..", user_services_path, class: "text-muted see-more-link" %>
+      </div>
+    <% end %>
+    <%= link_to "See More..", user_services_path, class: "see-more-link" %>
   </div>
 </div>
