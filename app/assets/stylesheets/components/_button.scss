@@ -29,3 +29,14 @@
 .btn-search {
   margin-left: -80px;
 }
+
+.btn-group {
+  .btn {
+    &.mr-1 {
+      margin-right: 0.5rem;
+    }
+    &.rounded-pill {
+      border-radius: 20px;
+    }
+  }
+}

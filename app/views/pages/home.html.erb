@@ -1,5 +1,5 @@
 <div class="banner">
-  <h1 class="text-center">Unlock Your Project's Potential with Top Freelancers</h1>
+  <h1 class="text-center">Unlock Your Projects Potential with Top Freelancers</h1>
   <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
     <%= form_with url: services_path, method: :get, class: "search-bar d-flex" do %>
@@ -68,7 +68,7 @@
 </div>
 
 <div class="container mt-5">
-<h1>Some of our services</h1>
+  <h1>Some of our services</h1>
   <div class="row">
       <% @services.each do |service| %>
         <div class="col-3 m-2 d-flex">
@@ -84,7 +84,10 @@
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
+    <%= link_to "See More..", user_services_path, class: "see-more-link" %>
   </div>
-    <%= link_to "See More..", user_services_path, class: "text-muted see-more-link" %>
-  </div>
+</div>
+
+<%= render "pages/footer" %>

@@ -1,6 +1,17 @@
 <div class="container mt-5">
   <div class="containerd-flex justify-content-between">
     <h1>Here all your services</h1>
+    <button class="btn btn-primary"><%= link_to "Create a new service", new_service_path %></button>
+    <button class="btn btn-primary"><%= link_to "See my pending sales", pending_sales_path %></button>
+  </div>
+  <div class="container mt-5">
+  <% @user_services.each do |service| %>
+    <div class="container d-flex">
+    <%= link_to service.title, service_path(service) %>
+    <button class="btn btn-warning"><%= link_to "Edit service", edit_service_path(service)%></button>
+    <button class="btn btn-danger"><%= link_to "Delete service", service_path(service), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+    </div>
+  <% end %>
     <button class="btn-main"><%= link_to "Create a new service", new_service_path %></button>
   </div>
   <table class="table table-striped table-dark custom-table">
