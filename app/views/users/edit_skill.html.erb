@@ -1,0 +1,8 @@
+<div class="container mt-5 pt-5">
+  <h2>Edit skill</h2>
+  <%= simple_form_for @user_skill, url: update_skill_path(skill_id: @user_skill.id), method: :patch do |f| %>
+    <%= f.input :skill %>
+    <%= f.input :level, collection: ["Beginner", "Intermediate", "Expert"] %>
+    <%= f.submit %>
+  <% end %>
+</div>
