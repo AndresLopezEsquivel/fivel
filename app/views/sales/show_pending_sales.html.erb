@@ -16,8 +16,15 @@
           <td><%= sale.service.title %></td>
           <td><%= sale.status %></td>
           <td>
-            <%= link_to "Accept", update_status_path(sale, status: 'accepted'), method: :patch, class: 'btn btn-success' %>
-            <%= link_to "Decline", update_status_path(sale, status: 'cancelled'), method: :patch, class: 'btn btn-danger' %>
+            <div class="btn-group" role="group" aria-label="Actions">
+              <%= link_to update_status_path(sale, status: 'accepted'), method: :patch, class: 'btn btn-success' do %>
+                <i class="fas fa-check"></i>
+              <% end %>
+
+              <%= link_to update_status_path(sale, status: 'cancelled'), method: :patch, class: 'btn btn-danger' do %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </div>
           </td>
         </tr>
       <% end %>

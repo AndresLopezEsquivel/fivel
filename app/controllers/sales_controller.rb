@@ -18,9 +18,9 @@ class SalesController < ApplicationController
 
   def update_status
     if @sale.update(status: params[:status])
-      redirect_to show_pending_sales_path, notice: 'Status was successfully updated.'
+      redirect_to pending_sales_path, notice: 'Status was successfully updated.'
     else
-      redirect_to show_pending_sales_path, alert: 'Failed to update status.'
+      redirect_to pending_sales_path, alert: 'Failed to update status.'
     end
   end
 
