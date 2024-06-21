@@ -1,13 +1,11 @@
-.category-card {
+.service-card {
   display: flex;
   flex-direction: column;
   color: white;
-  cursor: pointer;
-  text-decoration: none;
-  width: 250px;
+  text-align: center;
   height: 150px;
   background-color: #150e1d;
-  border: solid 1px $orange;
+  border: solid 1px $red-light-fivel;
   border-radius: $border-radius-xl;
   margin: 30px 10px;
   padding: 30px;
@@ -129,26 +127,77 @@
   text-align: center;
 }
 
-.see-more-link {
-  color: $red-light-fivel;
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-
-  &:hover {
-    color: #ffffff;
-  }
-}
-
 .categories .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-
-.category-card h3 {
+.service-card h3 {
   margin: 0;
   font-size: 20px;
   color: #bfb6b6;
+}
+
+.service-card:hover {
+  transform: scale(1.1);
+}
+
+.service-card h5 {
+  margin: 30px auto;
+  width: 90%;
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: $border-radius-xl;
+}
+
+.col-category {
+  background-color: #150e1d;
+  color:white;
+  border: solid 1px $red-light-fivel;
+  border-radius: $border-radius-xl;
+  margin: 30px 10px;
+  padding: 30px 10px 10px 30px;
+  display: flex;
+  align-items: center;
+  transition: ease-in-out 0.3s;
+}
+
+.col-category:hover {
+  transform: scale(1.1);
+}
+
+.col-category a {
+  text-decoration: none;
+}
+
+.col-category i {
+  color: white
+}
+
+.login, .signup, .new, .edit {
+  width: 600px;
+  background-color: #150e1d!important;
+  border: solid 1px $red-light-fivel;
+  border-radius: $border-radius-xl;
+  padding: 60px;
+}
+
+.login input, .signup input, .new input, .new textarea, .new select, .edit input, .edit textarea, .edit select {
+  background-color: #382b46!important;
+  color: white;
+  border: solid 1px $red-light-fivel;
+  border-radius: $border-radius-xl;
+}
+
+.login label, .login input:focus, .signup label, .signup input:focus, .new label, .new input:focus, .edit label, .edit input:focus {
+  color: white;
+}
+
+.services .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

@@ -7,6 +7,12 @@
   transition: ease-in-out 0.3s;
 }
 
+.btn-main a {
+  color: white;
+  text-decoration: none;
+}
+
+
 .btn-main:hover {
   background-color: $red-dark-fivel;
   transform: scale(1.1);
@@ -19,6 +25,12 @@
   border-radius: 30px;
   padding: 8px 30px;
   transition: ease-in-out 0.3s;
+
+}
+
+.btn-alternative a {
+  color: white;
+  text-decoration: none;
 }
 
 .btn-alternative:hover {
@@ -39,4 +51,45 @@
       border-radius: 20px;
     }
   }
+}
+.btn-edit {
+  border: solid 1px  $orange;
+  background-color: $orange;
+  color:  #007bff;
+  border-radius: 30px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.9;
+    background-color: transparent;
+    color: #e3dada;
+    transform: scale(1.1);
+  }
+}
+
+.btn-delete {
+  border: solid 1px  $red;
+  background-color: $red;
+  color:  #007bff;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.9;
+    background-color: transparent;
+    color: #e3dada;
+    transform: scale(1.1);
+  }
+}
+
+.btn-edit a, .btn-delete a {
+text-decoration: none;
+color: white;
 }
