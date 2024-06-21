@@ -5,9 +5,7 @@
 
 <div class="container category-row mt-5">
   <div class="row">
-      <% services = @services.where(category: "e-commerce") %>
-      <h2>E-commerce</h2>
-      <% services.each do |service|%>
+      <% @services.each do |service|%>
       <div class="col service-card">
         <%= link_to service.title, service_path(service) %>
       </div>

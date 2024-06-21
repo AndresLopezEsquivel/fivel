@@ -1,56 +1,87 @@
 <div class="banner">
   <h1 class="text-center">Unlock Your Projects Potential with Top Freelancers</h1>
   <div class="row justify-content-center">
-    <div class="col-4 my-1">
-      <%= form_with url: services_path, method: :get, class: "search-bar d-flex" do %>
-        <%= text_field_tag :search,
-              params[:search],
-              class: "form-control search-bar",
-              placeholder: "Type a keyword"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn-search btn-alternative" %>
-      <% end %>
+  <div class="col-sm-8 my-3">
+    <%= form_with url: services_path, method: :get, class: "search-bar d-flex" do %>
+      <%= text_field_tag :search,
+            params[:search],
+            class: "form-control search-bar",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn-search btn-alternative" %>
+    <% end %>
     </div>
   </div>
 
-<div class="container categories d-flex mt-5">
-    <div class="category-card">
-      <i class="fa-solid fa-file-lines"></i>
-      <p>content-writing</p>
+
+  <div class="container categories my-5">
+  <div class="row">
+    <div class="col col-category">
+      <a href="/services?search=content-writing">
+          <div class="category-card">
+            <i class="fa-solid fa-file-lines"></i>
+            <p>content-writing</p>
+          </div>
+        </a>
+      </div>
+    <div class="col col-category">
+      <a href="/services?search=front-end">
+        <div class="category-card">
+          <i class="fa-solid fa-code"></i>
+          <p>front-end</p>
+        </div>
+      </a>
     </div>
-    <div class="category-card">
-      <i class="fa-solid fa-code"></i>
-      <p>front-end</p>
+    <div class="col col-category">
+      <a href="/services?search=web-design">
+        <div class="category-card">
+          <i class="fa-solid fa-palette"></i>
+          <p>web-design</p>
+        </div>
+      </a>
     </div>
-    <div class="category-card">
-      <i class="fa-solid fa-palette"></i>
-      <p>web-design</p>
+    <div class="col col-category">
+      <a href="/services?search=setup">
+        <div class="category-card">
+          <i class="fa-solid fa-gear"></i>
+          <p>setup</p>
+        </div>
+      </a>
+     </div>
+     <div class="col col-category">
+      <a href="/services?search=debugging">
+        <div class="category-card">
+          <i class="fa-solid fa-bug"></i>
+          <p>debugging</p>
+        </div>
+      </a>
+     </div>
+    <div class="col col-category">
+     <a href="/services?search=video-making">
+        <div class="category-card">
+          <i class="fa-brands fa-youtube"></i>
+          <p>video-making</p>
+        </div>
+      </a>
     </div>
-    <div class="category-card">
-      <i class="fa-solid fa-gear"></i>
-      <p>setup</p>
-    </div>
-    <div class="category-card">
-      <i class="fa-solid fa-bug"></i>
-      <p>debugging</p>
-    </div>
-    <div class="category-card">
-      <i class="fa-brands fa-youtube"></i>
-      <p>video-making</p>
-    </div>
+  </div>
 </div>
 
 <div class="container mt-5">
   <h1>Some of our services</h1>
   <div class="row">
-    <% @services.each do |service| %>
-      <div class="col-3 m-2 d-flex">
-        <div class="card card-styling h-100" style="width: 18rem;">
-          <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title"><%= service.title %></h5>
-            <p class="card-text flex-grow-1" style="font-size: 0.9rem;"><%= service.description %></p>
-            <%= link_to "Details", service_path(service), class: "btn-main mt-auto" %>
+      <% @services.each do |service| %>
+        <div class="col-3 m-2 d-flex">
+          <div class="category-card card-styling h-100" style="width: 18rem;">
+          <% if service.images.first %>
+            <%= cl_image_tag service.images.first.key %>
+          <% else %>
+            <%= image_tag("image_default.jpg") %>
+          <% end %>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><%= service.title %></h5>
+              <%= link_to "Details", service_path(service), class: "btn-main mt-auto" %>
+            </div>
           </div>
         </div>
       </div>

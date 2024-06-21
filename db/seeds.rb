@@ -1,3 +1,4 @@
+require "open-uri"
 Sale.destroy_all
 Service.destroy_all
 User.destroy_all

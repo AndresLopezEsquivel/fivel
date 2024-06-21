@@ -1,0 +1,11 @@
+<div class="container mt-5 pt-5">
+  <h2>Edit education</h2>
+  <%= simple_form_for @user_education, url: update_education_path(education_id: @user_education.id), method: :patch do |f| %>
+    <%= f.input :country, as: :string %>
+    <%= f.input :college %>
+    <%= f.input :title %>
+    <%= f.input :major %>
+    <%= f.input :year %>
+    <%= f.submit %>
+  <% end %>
+</div>

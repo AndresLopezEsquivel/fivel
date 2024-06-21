@@ -1,11 +1,16 @@
 .category-card {
+  display: flex;
+  flex-direction: column;
+  color: white;
   cursor: pointer;
-  width: 300px;
+  text-decoration: none;
+  width: 250px;
+  height: 150px;
   background-color: #150e1d;
   border: solid 1px $orange;
   border-radius: $border-radius-xl;
-  margin: auto 10px;
-  padding: 20px;
+  margin: 30px 10px;
+  padding: 30px;
   transition: ease-in-out 0.3s;
 }
 
@@ -46,4 +51,104 @@
   &:hover {
     color: darken(#ed7542ac, 10%);
   }
+}
+
+.category-card h5 {
+  margin: 30px auto;
+  width: 90%;
+}
+
+.category-card img {
+  width: 100%;
+  border-radius: $border-radius-xl;
+}
+
+.col-category {
+  display: flex;
+  align-items: center;
+}
+
+.login, .signup {
+  width: 600px;
+  background-color: #150e1d!important;
+  border: solid 1px $red-light-fivel;
+  border-radius: $border-radius-xl;
+  padding: 60px;
+}
+
+.login input, .signup input {
+  background-color: #382b46!important;
+  color: white;
+  border: solid 1px $red-light-fivel;
+  border-radius: $border-radius-xl;
+}
+
+.login label, .login input:focus, .signup label, .signup input:focus {
+  color: white;
+}
+
+.services .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-card {
+  background-color: #121320;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid $red-light-fivel;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.service-card .card-body {
+  padding: 10px;
+}
+
+.service-title {
+  font-family: $headers-font;
+  color: #bfb6b6;
+  text-decoration: none;
+  font-size: 20px;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.category-title {
+  color: #d8d7d6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.see-more-link {
+  color: $red-light-fivel;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.categories .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.category-card h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #bfb6b6;
 }

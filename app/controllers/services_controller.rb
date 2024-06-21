@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    if params[:search].present? && @service
+    if params[:search].present?
       @services = Service.search_by_service(params[:search])
     else
       @services = Service.all

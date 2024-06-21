@@ -1,6 +1,6 @@
-<div class="container text-center align-middle mt-5 pt-5">
-  <div class="card text-bg-light rounded-4 ">
-    <h2>Log in</h2>
+<div class="container d-flex justify-content-center mt-5 pt-5">
+  <div class="login card text-bg-light rounded-4">
+    <div class="py-2", style="color: white"><h2>Log in</h2></div>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -15,7 +15,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Log in", class: "btn-alternative mb-4" %>
       </div>
     <% end %>
 

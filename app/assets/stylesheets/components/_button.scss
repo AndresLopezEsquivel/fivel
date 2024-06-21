@@ -27,16 +27,16 @@
 }
 
 .btn-search {
-  margin-left: -80px
+  margin-left: -80px;
 }
 
 .btn-group {
   .btn {
     &.mr-1 {
-      margin-right: 0.5rem; // Ajusta el espacio entre los botones según sea necesario
+      margin-right: 0.5rem;
     }
     &.rounded-pill {
-      border-radius: 20px; // Ajusta el valor según el grado de redondez que desees
+      border-radius: 20px;
     }
   }
 }

@@ -19,47 +19,62 @@
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
       <div class="d-flex justify-content-between">
         <h4>Languages</h4>
-        <%= link_to '', new_language_path, class: 'mx-1 fa-solid fa-square-plus' %>
+        <%= link_to '', new_language_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
       </div>
-      <div class="row gx-5 mb-3">
+      <div class="row gx-5 mb-5">
         <% @user_languages.each do |language| %>
           <div class="col-auto">
             <span><%= language.language %></span>
             <span class="fst-italic fw-light text-white">- <%= language.level %></span>
-            <%= link_to '', edit_language_path(language), class: 'mx-1 fa-solid fa-pen-to-square' %>
+            <%= link_to '', edit_language_path(language), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
             <%= link_to '', destroy_language_path(language), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>
       <hr>
-      <h4 class="pt-3">Skills</h4>
-      <div class="row gx-5 mb-3">
+      <div class="d-flex justify-content-between mt-4">
+        <h4>Skills</h4>
+        <%= link_to '', new_skill_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
+      </div>
+      <div class="row gx-5 mb-5">
         <% @user_skills.each do |skill| %>
           <div class="col-auto">
             <span class="mb-0"><%= skill.skill %></span>
             <span class="mb-0 fst-italic fw-light text-white">- <%= skill.level %></span>
+            <%= link_to '', edit_skill_path(skill), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
+            <%= link_to '', destroy_skill_path(skill), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>
       <hr>
-      <h4 class="pt-3">Education</h4>
-      <div class="row gx-5 mb-3">
+      <div class="d-flex justify-content-between mt-4">
+        <h4>Education</h4>
+        <%= link_to '', new_education_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
+      </div>
+      <div class="row gx-5 mb-5">
         <% @user_educations.each do |education| %>
           <div class="col-auto">
             <span class="mb-0"><%= education.major %></span>
             <span class="mb-0 fst-italic fw-light text-white">- <%= education.college %></span>
             <span class="mb-0 fst-italic fw-light text-white">, <%= education.year %></span>
+            <%= link_to '', edit_education_path(education), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
+            <%= link_to '', destroy_education_path(education), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>
       <hr>
-      <h4 class="pt-3">Certifications</h4>
+      <div class="d-flex justify-content-between mt-4">
+        <h4>Certifications</h4>
+        <%= link_to '', new_certification_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
+      </div>
       <div class="row gx-5 mb-5">
         <% @user_certifications.each do |certification| %>
           <div class="col-auto">
             <span class="mb-0"><%= certification.certification %></span>
             <span class="mb-0 fst-italic fw-light text-white">- <%= certification.company %></span>
             <span class="mb-0 fst-italic fw-light text-white">, <%= certification.year %></span>
+            <%= link_to '', edit_certification_path(certification), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
+            <%= link_to '', destroy_certification_path(certification), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>

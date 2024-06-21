@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <div class="container d-flex justify-content-between">
+  <div class="containerd-flex justify-content-between">
     <h1>Here all your services</h1>
     <button class="btn btn-primary"><%= link_to "Create a new service", new_service_path %></button>
     <button class="btn btn-primary"><%= link_to "See my pending sales", pending_sales_path %></button>
@@ -12,5 +12,27 @@
     <button class="btn btn-danger"><%= link_to "Delete service", service_path(service), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
     </div>
   <% end %>
+    <button class="btn-main"><%= link_to "Create a new service", new_service_path %></button>
   </div>
+  <table class="table table-striped table-dark custom-table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Title</th>
+        <th scope="col-6">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_services.each_with_index do |service, index| %>
+        <tr>
+          <th scope="row"><%= index + 1 %></th>
+          <td><%= service.title %></td>
+          <td><%= service.description %></td>
+          <td><button class="btn btn-warning"><%= link_to "Edit service", edit_service_path(service)%></button>
+          <button class="btn btn-danger"><%= link_to "Delete service", service_path(service), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

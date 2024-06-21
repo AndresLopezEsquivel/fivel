@@ -33,8 +33,19 @@ Rails.application.routes.draw do
 
   get "/users/skills/new", to: "users#new_skill", as: :new_skill
   post "/skills", to: "users#create_skill"
+  get "edit_skill/:skill_id", to: "users#edit_skill", as: :edit_skill
+  patch "update_skill/:skill_id", to: "users#update_skill", as: :update_skill
+  delete "destroy_skill/:skill_id", to: "users#destroy_skill", as: "destroy_skill"
+
   get "/users/educations/new", to: "users#new_education", as: :new_education
   post "/educations", to: "users#create_education"
+  get "edit_education/:education_id", to: "users#edit_education", as: :edit_education
+  patch "update_education/:education_id", to: "users#update_education", as: :update_education
+  delete "destroy_education/:education_id", to: "users#destroy_education", as: "destroy_education"
+
   get "/users/certifications/new", to: "users#new_certification", as: :new_certification
   post "/certifications", to: "users#create_certification"
+  get "edit_certification/:certification_id", to: "users#edit_certification", as: :edit_certification
+  patch "update_certification/:certification_id", to: "users#update_certification", as: :update_certification
+  delete "destroy_certification/:certification_id", to: "users#destroy_certification", as: "destroy_certification"
 end
