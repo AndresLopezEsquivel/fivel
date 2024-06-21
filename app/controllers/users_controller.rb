@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user_skills = UserSkill.where(user: current_user)
     @user_educations = UserEducation.where(user: current_user)
     @user_certifications = UserCertification.where(user: current_user)
+    @user_services = current_user.services
   end
 
   def new_language

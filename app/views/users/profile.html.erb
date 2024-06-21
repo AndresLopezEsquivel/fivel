@@ -79,7 +79,24 @@
         <% end %>
       </div>
     </div>
-    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">Hola</div>
+    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+      <% unless @user_services.nil? %>
+        <div class="d-flex justify-content-between">
+          <h4>Services</h4>
+          <%= link_to '', new_service_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
+        </div>
+        <div>
+          <% @user_services.each do |service| %>
+            <div>
+              <h4 class="mb-1"><%= service.title %></h4>
+              <p class="mb-1 fst-italic fw-light text-white">- <%= service.description %></p>
+              <%= link_to '', edit_service_path(service), class: 'mb-3 fa-solid fa-pen-to-square text-decoration-none' %>
+              <%= link_to '', service_path(service), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none' %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
     <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
   </div>
 </div>
