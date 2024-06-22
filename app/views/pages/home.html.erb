@@ -69,11 +69,11 @@
 </div>
 
 <div class="container mt-5">
-  <h1>Some of our services</h1>
+  <h2>Here some services</h2>
   <div class="row">
       <% @services.each do |service| %>
         <div class="col-3 m-2 d-flex">
-          <div class="service-card w-200 h-100" style="width: 18rem;">
+          <div class="service-card h-100" style="width: 18rem;">
           <% if service.images.first %>
             <%= cl_image_tag service.images.first.key %>
           <% else %>
@@ -84,8 +84,7 @@
               <%= link_to "Details", service_path(service), class: "btn-main mt-auto" %>
             </div>
           </div>
-          <% end %>
         </div>
-      </div>
+      <% end %>
+    </div>
   </div>
-</div>

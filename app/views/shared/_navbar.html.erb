@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <li class="p-2 nav-item">Fivel Pro</li>
-        <li class="p-2 nav-item">Explore</li>
+        <li class="p-2 nav-item"><%= link_to "Explore", services_path %></li>
         <li class="p-2 nav-item">Become a Seller</li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">

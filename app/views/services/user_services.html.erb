@@ -16,7 +16,7 @@
       <% @user_services.each_with_index do |service, index| %>
         <tr>
           <th scope="row"><%= index + 1 %></th>
-          <td><%= service.title %></td>
+          <td><%= link_to service.title, service_path(service) %></td>
           <td><%= service.description %></td>
           <td>
           <div class="d-flex justify-content-center">
