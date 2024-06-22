@@ -26,14 +26,6 @@
   border-radius: $border-radius-xl;
 }
 
-.see-more-link {
-  color: #ed7542ab;
-  margin-top: 20px;
-  &:hover {
-    color: darken(#ed7542ac, 10%);
-  }
-}
-
 .category-card h5 {
   margin: 30px auto;
   width: 90%;

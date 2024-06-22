@@ -10,9 +10,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="p-2 nav-item">Fivel Pro</li>
         <li class="p-2 nav-item"><%= link_to "Explore", services_path %></li>
-        <li class="p-2 nav-item">Become a Seller</li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
@@ -20,7 +18,6 @@
           <% else %>
             <%= image_tag("avatar_default.png", class: "avatar mx-2") %>
           <% end %>
-
           <a href="#" class="bars" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
           </a>
@@ -33,6 +30,7 @@
           </li>
         <% else %>
           <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link text-warning fw-bold" %>
             <%= link_to "Login", new_user_session_path, class: "nav-link text-warning fw-bold" %>
           </li>
         <% end %>

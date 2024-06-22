@@ -72,7 +72,7 @@
   <h2>Here some services</h2>
   <div class="row">
       <% @services.each do |service| %>
-        <div class="col-3 m-2 d-flex">
+        <div class="col m-2 d-flex">
           <div class="service-card h-100" style="width: 18rem;">
           <% if service.images.first %>
             <%= cl_image_tag service.images.first.key %>

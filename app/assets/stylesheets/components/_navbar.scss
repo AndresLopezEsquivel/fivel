@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   padding-left: 40px;
-  background: rgba(0, 0, 0, 0);
+  background: #150e1d;
   padding: 1rem 2rem;
   backdrop-filter: blur(10px);
 }
@@ -19,7 +19,19 @@
   width: 90px;
 }
 
-.navbar-nav li a {
+.navbar-nav a {
   text-decoration: none;
-  color:white;
+  color: white;
+}
+
+.dropdown-menu {
+  background: #150e1d;
+  backdrop-filter: blur(10px);
+  border: solid 1px $red-light-fivel;
+  border-radius: $border-radius-xl;
+}
+
+.dropdown-menu a:hover {
+  color: white;
+  background: $red-light-fivel;
 }
