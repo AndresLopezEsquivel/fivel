@@ -29,7 +29,13 @@ class SalesController < ApplicationController
   end
 
   def show_pending_sales
-    @pending_sales = current_user.sales.where(status: 'pending')
+    # @pending_sales = []
+    # current_user.services.each do |service|
+    #   service.sales.each do |sale|
+    #     @pending_sales << sale if sale.status == "pending"
+    #   end
+    # end
+    @pending_sales = Sale.joins(:service).where(services: { user_id: current_user.id }, sales: { status: "pending" })
   end
 
   private

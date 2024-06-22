@@ -44,6 +44,26 @@
     </div>
   </div>
 
+
+<!-- Modal -->
+<div class="modal purchase-modal fade" id="PurchaseModal" tabindex="-1" aria-labelledby="PurchaseModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="PurchaseModal">You are completing your purchase for:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><%= @service.title %></p>
+        <p>Price: <%= @service.price %>€</p>
+      </div>
+      <div class="modal-footer">
+          <%= button_to "Confirm Purchase", service_sales_path(@service), class: "btn-alternative" %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container d-flex justify-content-between align-items-center purchase-bar">
   <div class="price">
     <p>Price: <%= @service.price %>€</p>
@@ -51,7 +71,7 @@
   <div class="buy-button">
   <% if @seller == current_user %>
     <% elsif user_signed_in? %>
-      <%= button_to "Buy", service_sales_path(@service), class: "btn-main" %>
+    <button type="button" class="btn-main" data-bs-toggle="modal" data-bs-target="#PurchaseModal">Buy</button>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "btn-main" %>
     <% end %>

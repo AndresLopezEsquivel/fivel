@@ -1,0 +1,15 @@
+.purchase-modal {
+  margin-top: 100px;
+
+  .modal-content {
+    background-color: #150e1d;
+    color:white;
+    border: solid 1px $red-light-fivel;
+    border-radius: $border-radius-xl;
+  top: 100;
+  }
+
+  .btn-close  {
+    color: white;
+  }
+}
