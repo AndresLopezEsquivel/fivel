@@ -1,10 +1,17 @@
 <div class="banner profile-banner"></div>
-<div class="mx-5 mt-n5">
+<div class="d-flex mx-5 mt-n5">
   <% if @user.photo.attached? %>
     <%= cl_image_tag @user.photo.key, class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
   <% else %>
       <%= image_tag("avatar_default.png", class: "avatar-profile", alt: "user-avatar") %>
   <% end %>
+  <div class="d-flex align-items-center mt-5">
+    <div>
+      <h4 class="text-start mx-4"><%= @user.first_name %> <%= @user.last_name %> </h4>
+
+      <p class="px-4"><%= @user.description %></p>
+    </div>
+  </div>
 </div>
 
 <div class="container mt-5">
