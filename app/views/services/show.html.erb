@@ -3,11 +3,13 @@
     <div>
       <% if @seller.photo.attached? %>
             <%= cl_image_tag @seller.photo.key, class:"avatar" %>
+        <% else %>
+            <%= image_tag("avatar_default.png", class: "avatar mx-2") %>
       <% end %>
       <%= @seller.first_name %> <%= @seller.last_name %>
     </div>
     <div>
-      <%= button_to "See profile", new_user_session_path, class: "btn-main" %>
+      <%= button_to "See profile", user_path(@seller), class: "btn-main" %>
     </div>
   </div>
     <div class="container mt-5">
@@ -29,6 +31,7 @@
     </div>
     <% end %>
   </div>
+  <%= console %>
 
   <div class="container description mt-5">
     <h2>Description</h2>
@@ -42,7 +45,8 @@
     <p>Price: <%= @service.price %>€</p>
   </div>
   <div class="buy-button">
-    <% if user_signed_in? %>
+  <% if @seller == current_user %>
+    <% elsif user_signed_in? %>
       <%= button_to "Buy", service_sales_path(@service), class: "btn-main" %>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "btn-main" %>
