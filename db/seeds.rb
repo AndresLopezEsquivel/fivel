@@ -32,6 +32,9 @@ user5 = User.create!(first_name: 'Andres',
                      email: 'andres@gmail.com',
                      phone_number: '68300387',
                      password: "password")
+user1_file = URI.open("https://asset.cloudinary.com/dczinhg0a/0a76a4727ecb39b8b110d08f7b43d2ca")
+user1.photo.attach(io: user1_file, filename: "maya_profile_pic.jpg", content_type: "image/jpg")
+user1.save!
 
 services = Service.create!([
   {
