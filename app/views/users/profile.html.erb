@@ -29,7 +29,7 @@
       <div class="row gx-5 mb-5">
         <% @user_languages.each do |language| %>
           <div class="col-auto">
-            <span><%= language.language %></span>
+            <span><%= language.language.capitalize %></span>
             <span class="fst-italic fw-light text-white">- <%= language.level %></span>
             <%= link_to '', edit_language_path(language), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
             <%= link_to '', destroy_language_path(language), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
