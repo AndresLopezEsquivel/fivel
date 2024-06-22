@@ -1,11 +1,10 @@
 <div class="banner profile-banner"></div>
 <div class="mx-5 mt-n5">
-  <% if current_user.photo.attached? %>
-    <%= cl_image_tag current_user.photo.key, class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
+  <% if @user.photo.attached? %>
+    <%= cl_image_tag @user.photo.key, class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
   <% else %>
       <%= image_tag("avatar_default.png", class: "avatar-profile", alt: "user-avatar") %>
   <% end %>
-  <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
 </div>
 
 <div class="container mt-5">
@@ -24,37 +23,31 @@
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
       <div class="d-flex justify-content-between">
         <h4>Languages</h4>
-        <%= link_to '', new_language_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
       </div>
       <div class="row gx-5 mb-5">
         <% @user_languages.each do |language| %>
           <div class="col-auto">
-            <span><%= language.language.capitalize %></span>
+            <span><%= language.language %></span>
             <span class="fst-italic fw-light text-white">- <%= language.level %></span>
-            <%= link_to '', edit_language_path(language), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
-            <%= link_to '', destroy_language_path(language), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>
       <hr>
       <div class="d-flex justify-content-between mt-4">
         <h4>Skills</h4>
-        <%= link_to '', new_skill_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
       </div>
       <div class="row gx-5 mb-5">
         <% @user_skills.each do |skill| %>
           <div class="col-auto">
             <span class="mb-0"><%= skill.skill %></span>
             <span class="mb-0 fst-italic fw-light text-white">- <%= skill.level %></span>
-            <%= link_to '', edit_skill_path(skill), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
-            <%= link_to '', destroy_skill_path(skill), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
+
           </div>
         <% end %>
       </div>
       <hr>
       <div class="d-flex justify-content-between mt-4">
         <h4>Education</h4>
-        <%= link_to '', new_education_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
       </div>
       <div class="row gx-5 mb-5">
         <% @user_educations.each do |education| %>
@@ -62,15 +55,12 @@
             <span class="mb-0"><%= education.major %></span>
             <span class="mb-0 fst-italic fw-light text-white">- <%= education.college %></span>
             <span class="mb-0 fst-italic fw-light text-white">, <%= education.year %></span>
-            <%= link_to '', edit_education_path(education), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
-            <%= link_to '', destroy_education_path(education), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>
       <hr>
       <div class="d-flex justify-content-between mt-4">
         <h4>Certifications</h4>
-        <%= link_to '', new_certification_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
       </div>
       <div class="row gx-5 mb-5">
         <% @user_certifications.each do |certification| %>
@@ -78,33 +68,25 @@
             <span class="mb-0"><%= certification.certification %></span>
             <span class="mb-0 fst-italic fw-light text-white">- <%= certification.company %></span>
             <span class="mb-0 fst-italic fw-light text-white">, <%= certification.year %></span>
-            <%= link_to '', edit_certification_path(certification), class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %>
-            <%= link_to '', destroy_certification_path(certification), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none ps-2' %>
           </div>
         <% end %>
       </div>
     </div>
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
       <% unless @user_services.nil? %>
-        <div class="d-flex justify-content-between mb-5 pb-5">
+        <div class="d-flex justify-content-between">
           <h4>Services</h4>
-          <%= link_to '', new_service_path, class: 'fa-solid fa-plus text-decoration-none text-light py-2' %>
         </div>
         <div>
           <% @user_services.each do |service| %>
             <div>
               <h4 class="mb-1"><%= service.title %></h4>
               <p class="mb-1 fst-italic fw-light text-white">- <%= service.description %></p>
-              <%= link_to '', edit_service_path(service), class: 'mb-3 fa-solid fa-pen-to-square text-decoration-none' %>
-              <%= link_to '', service_path(service), data: { turbo_method: :delete, turbo_confirm: "Do you want to proceed?"}, class: 'fa-solid fa-trash text-danger text-decoration-none' %>
             </div>
-            <hr>
           <% end %>
         </div>
       <% end %>
     </div>
-    <div class="tab-pane fade mb-5 pb-5" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...
-      <hr>
-    </div>
+    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
   </div>
 </div>

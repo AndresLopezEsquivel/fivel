@@ -136,6 +136,15 @@ class UsersController < ApplicationController
     redirect_to profile_path, notice: 'Certification was successfully deleted.'
   end
 
+  def show
+    @user = User.find(params[:id])
+    @user_languages = UserLanguage.where(user: @user)
+    @user_skills = UserSkill.where(user: @user)
+    @user_educations = UserEducation.where(user: @user)
+    @user_certifications = UserCertification.where(user: @user)
+    @user_services = @user.services
+  end
+
   private
 
   def set_user_language

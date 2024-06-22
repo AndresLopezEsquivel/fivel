@@ -65,13 +65,13 @@
       </a>
     </div>
 </div>
-  
-<div class="container mt-5 pb-5">
-  <h1>Some of our services</h1>
-  <div class="row mb-5 pb-5">
-    <% @services.each do |service| %>
-      <div class="col-3 m-2 d-flex">
-        <div class="service-card card-styling h-100" style="width: 18rem;">
+
+<div class="container mt-5">
+  <h2>Here some services</h2>
+  <div class="row">
+      <% @services.each do |service| %>
+        <div class="col m-2 d-flex">
+          <div class="service-card h-100" style="width: 18rem;">
           <% if service.images.first %>
             <%= cl_image_tag service.images.first.key %>
           <% else %>

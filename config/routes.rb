@@ -10,13 +10,14 @@ Rails.application.routes.draw do
   # get "/services/:id", to: "services#show"
   # post "services/:service_id/sales", to: "sales#create"
   get "/user_services", to: "services#user_services"
-  get "user/:id", to: "services#user", as: "user"
   # get "/services/new", to: "services#new"
   # get "services:id/edit", to: "services#edit"
   resources :services, only: %i[index new create edit update destroy show] do
     resources :sales, only: %i[new create]
   end
   resources :sales, only: %i[edit show]
+
+  resources :users, only: %i[show]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

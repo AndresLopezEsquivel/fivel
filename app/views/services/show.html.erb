@@ -9,7 +9,7 @@
       <%= @seller.first_name %> <%= @seller.last_name %>
     </div>
     <div>
-      <%= button_to "See profile", user_path(@seller), class: "btn-main" %>
+      <%= link_to "See profile", user_path(@service.user), class: "btn-main" %>
     </div>
   </div>
     <div class="container mt-5">
@@ -31,7 +31,6 @@
     </div>
     <% end %>
   </div>
-  <%= console %>
 
   <div class="container description mt-5">
     <h2>Description</h2>
@@ -40,7 +39,7 @@
     </div>
   </div>
 
-  <div class="container d-flex justify-content-between align-items-center purchase-bar">
+<div class="container d-flex justify-content-between align-items-center purchase-bar">
   <div class="price">
     <p>Price: <%= @service.price %>€</p>
   </div>
@@ -52,4 +51,5 @@
       <%= link_to "Login", new_user_session_path, class: "btn-main" %>
     <% end %>
   </div>
+</div>
 </div>
