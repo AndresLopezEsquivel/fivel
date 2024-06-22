@@ -17,7 +17,11 @@ class UsersController < ApplicationController
   end
 
   def create_language
-    @user_language = UserLanguage.new(language_params)
+    @user_language = UserLanguage.find_by(language: params[:user_language][:language].downcase)
+    unless @user_language
+      @user_language = UserLanguage.new(language_params)
+      @user_language.language = @user_language.language.downcase
+    end
     @user_language.user = current_user
     if @user_language.save!
       redirect_to profile_path, notice: "Language added succesfully"
@@ -130,6 +134,15 @@ class UsersController < ApplicationController
   def destroy_certification
     @user_certification.destroy
     redirect_to profile_path, notice: 'Certification was successfully deleted.'
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @user_languages = UserLanguage.where(user: @user)
+    @user_skills = UserSkill.where(user: @user)
+    @user_educations = UserEducation.where(user: @user)
+    @user_certifications = UserCertification.where(user: @user)
+    @user_services = @user.services
   end
 
   private

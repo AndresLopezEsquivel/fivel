@@ -47,10 +47,6 @@ class ServicesController < ApplicationController
     @user_services = Service.where(user: current_user)
   end
 
-  def user
-
-  end
-
   private
 
   def set_service
