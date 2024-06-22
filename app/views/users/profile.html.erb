@@ -1,12 +1,19 @@
 <div class="banner profile-banner"></div>
-<div class="mx-5 mt-n5">
+<div class="d-flex mx-5 mt-n5">
   <% if current_user.photo.attached? %>
     <%= cl_image_tag current_user.photo.key, class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
   <% else %>
       <%= image_tag("avatar_default.png", class: "avatar-profile", alt: "user-avatar") %>
   <% end %>
-  <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
+  <div class="d-flex align-items-center mt-5">
+    <div>
+      <h4 class="text-start mx-4"><%= current_user.first_name %> <%= current_user.last_name %> <%= link_to '', edit_user_registration_path, class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %></h4>
+
+      <p class="px-4"><%= current_user.description %></p>
+    </div>
+  </div> <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
 </div>
+
 
 <div class="container mt-5">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -15,9 +22,6 @@
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link btn btn-light" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Services</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link btn btn-light" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Sales</button>
     </li>
   </ul>
   <div class="tab-content pt-3" id="myTabContent">
@@ -102,9 +106,6 @@
           <% end %>
         </div>
       <% end %>
-    </div>
-    <div class="tab-pane fade mb-5 pb-5" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...
-      <hr>
     </div>
   </div>
 </div>

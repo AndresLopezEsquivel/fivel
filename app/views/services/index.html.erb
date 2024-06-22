@@ -3,10 +3,10 @@
   <p>You can consult them in the below list</p>
 </div>
 
-<div class="container mt-5">
-  <div class="row">
+<div class="container mt-2">
+  <div class="d-grid" style="grid-template-columns: 1fr 1fr 1fr;">
       <% @services.each do |service| %>
-        <div class="col m-2 d-flex">
+        <div class="col m-2">
           <div class="service-card h-100" style="width: 18rem;">
           <% if service.images.first %>
             <%= cl_image_tag service.images.first.key %>
