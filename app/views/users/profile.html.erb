@@ -7,8 +7,9 @@
   <% end %>
   <div class="d-flex align-items-center mt-5">
     <div>
-      <h4 class="text-start mx-4"><%= current_user.first_name %> <%= current_user.last_name %></h4>
-      <p class="px-4">Description</p>
+      <h4 class="text-start mx-4"><%= current_user.first_name %> <%= current_user.last_name %> <%= link_to '', edit_user_registration_path, class: 'mx-1 fa-solid fa-pen-to-square text-decoration-none' %></h4>
+
+      <p class="px-4"><%= current_user.description %></p>
     </div>
   </div> <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-profile border border-light border-3", alt: "user-avatar" %>
 </div>

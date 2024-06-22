@@ -79,8 +79,6 @@ gem "devise", "~> 4.9"
 
 gem "faker", "~> 3.4"
 
-gem "dotenv-rails"
-
 gem "cloudinary"
 
 gem "pg_search"
