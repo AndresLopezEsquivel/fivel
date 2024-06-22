@@ -17,7 +17,11 @@ class UsersController < ApplicationController
   end
 
   def create_language
-    @user_language = UserLanguage.new(language_params)
+    @user_language = UserLanguage.find_by(language: params[:user_language][:language].downcase)
+    unless @user_language
+      @user_language = UserLanguage.new(language_params)
+      @user_language.language = @user_language.language.downcase
+    end
     @user_language.user = current_user
     if @user_language.save!
       redirect_to profile_path, notice: "Language added succesfully"
