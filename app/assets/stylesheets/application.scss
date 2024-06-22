@@ -15,6 +15,11 @@
 body {
   background: linear-gradient(135deg, #130e1d, #000000);
   color: white;
+  position: relative;
+  margin: 0;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 i {

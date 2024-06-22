@@ -159,10 +159,12 @@
   border: solid 1px $red-light-fivel;
   border-radius: $border-radius-xl;
   margin: 30px 10px;
-  padding: 30px 10px 10px 30px;
+  padding: 20px 15px 20px 15px;
   display: flex;
   align-items: center;
   transition: ease-in-out 0.3s;
+  justify-content: center;
+  text-align: center;
 }
 
 .col-category:hover {
@@ -171,6 +173,7 @@
 
 .col-category a {
   text-decoration: none;
+  color: #bfb6b6;
 }
 
 .col-category i {
