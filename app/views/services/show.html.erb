@@ -9,7 +9,12 @@
       <%= @seller.first_name %> <%= @seller.last_name %>
     </div>
     <div>
-      <%= link_to "See profile", user_path(@service.user), class: "btn-main" %>
+      <% if @seller == current_user %>
+          <%= link_to "See my profile", profile_path, class: "btn-main" %>
+            <% else %>
+          <%= link_to "See profile", user_path(@service.user), class: "btn-main" %>
+      <% end %>
+
     </div>
   </div>
     <div class="container mt-5">
