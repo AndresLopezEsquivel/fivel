@@ -161,7 +161,6 @@ service6_file = URI.open("https://unsplash.com/es/fotos/foto-de-primer-plano-del
 service6.images.attach(io: service6_file, filename: "s6.jpg", content_type: "image/jpg")
 service6.save!
 
-
 Sale.create!(
   status: 'accepted',
   date: '2024-03-30',
